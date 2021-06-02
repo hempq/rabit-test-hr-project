@@ -53,8 +53,8 @@
 			try
 			{
 				$this->open_db();
-				$query=$this->condb->prepare("UPDATE advertisements SET title=? WHERE id=?");
-				$query->bind_param("ssi", $obj->title,$obj->id);
+				$query=$this->condb->prepare("UPDATE advertisements SET title=?, user_id=? WHERE id=?");
+				$query->bind_param("ssi", $obj->title,$obj->user_id,$obj->id);
 				$query->execute();
 				$res=$query->get_result();
 				$query->close();

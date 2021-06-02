@@ -53,6 +53,14 @@ class AdvertisementController
         } else {
             $advertisementttb->title_msg = "";
         }
+
+        // Validate user
+        if (empty($advertisementttb->user_id)) {
+            $advertisementttb->user_id_msg = "Field is empty.";
+        $noerror = false;
+        } else {
+            $advertisementttb->user_id_msg = "";
+        }
         return $noerror;
     }
 
